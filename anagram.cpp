@@ -21,6 +21,8 @@ int main(int argc, char * argv[]) {
 }
 
 bool areAnagram(std::string word1, std::string word2) {
+	if(word1.length() != word2.length()) return false;
+	
 	std::sort(word1.begin(), word1.end());
 	std::sort(word2.begin(), word2.end());	
 	return word1 == word2;
