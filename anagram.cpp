@@ -23,7 +23,13 @@ int main(int argc, char * argv[]) {
 bool areAnagram(std::string word1, std::string word2) {
 	if(word1.length() != word2.length()) return false;
 	
-	std::sort(word1.begin(), word1.end());
-	std::sort(word2.begin(), word2.end());	
-	return word1 == word2;
+	std::string tmp1, tmp2;
+	for(int i = 0; i < word1.length(); i++) {
+		tmp1[i] = tolower(word1[i]);
+		tmp2[i] = tolower(word2[i]);
+	}
+	
+	std::sort(tmp1.begin(), tmp1.end());
+	std::sort(tmp2.begin(), tmp2.end());	
+	return tmp1 == tmp2;
 }
